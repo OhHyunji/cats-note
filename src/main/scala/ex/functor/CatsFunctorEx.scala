@@ -3,33 +3,16 @@ package ex.functor
 import cats.Functor
 
 /*
- * monad, monadic, functor
- *
- * monad
- * - 값을 꺼낼 수 있는 타입클래스
- *
- * monadic
- * - 모나드로 만들 수 있는 자료구조를 모나딕이라고 한다.
- * - Option 은 모나드가 아니고, 모나딕이다.
- * - Option 은 모나드랑 상관은 없지만 map 을 사용할 수 있기 때문에 모나딕이라 한다. #공부해야징ㅋ
- * - 모나딕이면 모나드가 될 수 있다.
- * - 모나딕이면 모나드 타입 인스턴스를 만들 수 있다.
- *
- * 데이터타입, 타입클래스
- * - 데이터타입이랑 타입클래스는 장르가 다르다.
- * - Option 은 데이터타입이다.
- * - Option 을 타입클래스라고 표현하지는 않는다.
- *
  * type constructor, higher kind type
- * - cats 책에 나와있음. (p69)
+ * - cats 책 참고. (p69)
  * - List: type constructor
  * - List[Int]: type
  *
- * value -> type 으로 바꿀 수 있고
+ * value -> type 으로 바꿀 수 있고,
  * function -> type constructor 로 바꿀 수 있다.
  *
  * Functor in Cats
- * - cats 책에 나와있음. (p71)
+ * - cats 책 참고. (p71)
  * */
 
 object CatsFunctorEx extends App {

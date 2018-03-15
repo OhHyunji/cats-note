@@ -13,7 +13,7 @@ package ex.functor
 * - 반대로 left-biased 특징을 가진 자료구조도 있는데, 이것은 왼쪽 아이의 타입이 바꿔지겠지? ㅇㅇ맞음!
 *
 * partial unification
-* - cats 책에 나와있음. (p67)
+* - cats 책 참고. (p67)
 * - 어려운 내용이긴 한데 한번 읽어보시라. (https://gist.github.com/djspiewak/7a81a395c461fd3a09a6941d4cd040f2)
 * - 언젠가 도움이 될 것이니!
 *
@@ -22,7 +22,7 @@ package ex.functor
 
 /*
 * (Monad 와 다르게)
-* Functor 니까 HigherKind 타입으로.
+* Functor 니까 HigherKind 타입으로. [_]
 * */
 trait MyFunctor[F[_]] {
   def map[A, B](fa: F[A])(f: A => B): F[B]
