@@ -21,8 +21,7 @@ package ex.functor
 * */
 
 /*
-* (Monad 와 다르게)
-* Functor 니까 HigherKind 타입으로. [_]
+* Monad 와 다르게, Functor 니까 HigherKind 타입으로. [_]
 * */
 trait MyFunctor[F[_]] {
   def map[A, B](fa: F[A])(f: A => B): F[B]
@@ -31,18 +30,17 @@ trait MyFunctor[F[_]] {
 case class Id[A](a: A)
 
 object MyFunctorTest {
+  /*
+  * Functor 인스턴스 만들기
+  * 1. 값을 꺼내서
+  * 2. 함수를 적용하고
+  * 3. 다시 껍데기를 씌운다.
+  *
+  * 만약 케이스클래스 Id가 이렇게 생겨서 a를 꺼낼 수 없다면,
+  * case class Id[A](private val a: A)
+  * Functor 인스턴스로 만들 수 없다.
+  * */
   implicit object IdMyFunctorInstance extends MyFunctor[Id] {
-    /*
-    * 1. 값을 꺼내서
-    * 2. 함수를 적용하고
-    * 3. 다시 껍데기를 씌운다.
-    *
-    * 이게 다 가능해야 Functor 에 대한 인스턴스를 만들 수 있다.
-    *
-    * case class Id[A](private val a: A)
-    * 만약 케이스클래스 Id가 이렇게 생겨서 a를 꺼낼 수 없다면,
-    * Functor 인스턴스로 만들 수 없다.
-    * */
     override def map[A, B](fa:Id[A])(f:A => B):Id[B] = Id(f(fa.a))
   }
 }

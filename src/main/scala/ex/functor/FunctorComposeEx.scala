@@ -6,7 +6,7 @@ import cats.Functor
 * Monad 는 합성이 안되서 Monad Transformer 를 만들어야 하지만
 * Functor 는 그냥 compose 쓰면 된다. (함수합성)
 * */
-object CatsFunctorComposeEx extends App {
+object FunctorComposeEx extends App {
 
   import cats.implicits._
 

@@ -15,10 +15,10 @@ import cats.Functor
  * - cats 책 참고. (p71)
  * */
 
-object CatsFunctorEx extends App {
+object FunctorEx extends App {
 
   import cats.implicits._
-  import cats.syntax.list._   //TODO: 이것은 뭐때문에 import 하는거지
+  import cats.syntax.list._
 
   val xs = List(1, 2, 3)
 
