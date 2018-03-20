@@ -1,8 +1,7 @@
 package ex.functor
 
 /*
-* Functor 의 특징1.
-* Higher Kind Type 이어야 한다.
+* Functor 의 특징1. Higher Kind Type 이어야 한다.
 * - List[_], Either[_, _] 등등 이런 아이들.
 * - Either 는 kind 가 두개다.
 *
@@ -13,9 +12,9 @@ package ex.functor
 * - 반대로 left-biased 특징을 가진 자료구조도 있는데, 이것은 왼쪽 아이의 타입이 바꿔지겠지? ㅇㅇ맞음!
 *
 * partial unification
-* - cats 책 참고. (p67)
-* - 어려운 내용이긴 한데 한번 읽어보시라. (https://gist.github.com/djspiewak/7a81a395c461fd3a09a6941d4cd040f2)
-* - 언젠가 도움이 될 것이니!
+* - (참고: cats 책 p67)
+* - (참고: https://gist.github.com/djspiewak/7a81a395c461fd3a09a6941d4cd040f2)
+* - 어렵긴한데 읽어보시라. 언젠가 도움이 될 것이니!
 *
 * 아무튼 오늘은 Functor 를 만들어보자.
 * */
@@ -46,6 +45,8 @@ object MyFunctorTest {
 }
 
 /*
+* Note
+*
 * higher kind type 그냥 쓰면 warning 뜬다.
 *
 * 방법1.

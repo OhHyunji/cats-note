@@ -3,18 +3,8 @@ package ex.functor
 import cats.Functor
 
 /*
- * type constructor, higher kind type
- * - cats 책 참고. (p69)
- * - List: type constructor
- * - List[Int]: type
- *
- * value -> type 으로 바꿀 수 있고,
- * function -> type constructor 로 바꿀 수 있다.
- *
- * Functor in Cats
- * - cats 책 참고. (p71)
- * */
-
+* Id 에 대한 Functor 인스턴스 만들기 연습
+* */
 object FunctorEx extends App {
 
   import cats.implicits._
@@ -52,7 +42,7 @@ object FunctorEx extends App {
   *
   * 아래처럼 implicit val 이렇게 해도 된다.
   * */
-  implicit val catsIdFunctorInstance = new Functor[Id] {
+  implicit val idFunctorInstance = new Functor[Id] {
     override def map[A, B](fa: Id[A])(f: A => B): Id[B] = Id(f(fa.a))
   }
 
@@ -63,3 +53,18 @@ object FunctorEx extends App {
   * id. 해서 보면 fmap 말고도 Functor 인스턴스라서 생긴 method 들이 쭉 보인다.
   * */
 }
+
+/*
+ * Note
+ *
+ * type constructor, higher kind type
+ * - (참고: cats 책 p69)
+ * - List: type constructor
+ * - List[Int]: type
+ *
+ * value -> type 으로 바꿀 수 있고,
+ * function -> type constructor 로 바꿀 수 있다.
+ *
+ * Functor in Cats
+ * - (참고: cats 책 p71)
+ * */
